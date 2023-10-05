@@ -36,7 +36,6 @@ pipeline{
             }
             }
         }
-        def registry = 'https://namln.jfrog.io/'
         stage("Jar Publish") {
         steps {
             script {
