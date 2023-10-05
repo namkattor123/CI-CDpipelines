@@ -20,6 +20,13 @@ pipeline{
                  echo "----------- build complted ----------"
             }
         }
+        stage("test"){
+            steps{
+                echo "----------- unit test started ----------"
+                sh 'mvn surefire-report:report'
+                 echo "----------- unit test Complted ----------"
+            }
+        }
         stage('SonarQube analysis') {
             environment{
                 scannerHome = tool 'namln-sonar-scanner';
