@@ -1,3 +1,4 @@
+def registry = 'https://namln.jfrog.io/'
 pipeline{
     agent {
         node {
@@ -40,7 +41,7 @@ pipeline{
         steps {
             script {
                     echo '<--------------- Jar Publish Started --------------->'
-                     def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:""
+                     def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:"0808095f-27f3-47f2-b89f-1ba29f48f28d"
                      def properties = "buildid=${env.BUILD_ID},commitid=${GIT_COMMIT}";
                      def uploadSpec = """{
                           "files": [
