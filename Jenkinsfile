@@ -1,9 +1,9 @@
 pipeline{
     agent any
     stages{
-        stage('Clone Code form Git'){
+        stage('Clone Code from Git'){
             steps{
-                sh 'echo y | Test success'
+                git branch: 'main', url: 'https://github.com/namkattor123/CI-CDpipelines.git'
             }
         }
     }
