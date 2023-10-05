@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage('Clone Code form Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/namkattor123/CI-CDpipelines.git'
+                sh 'echo y | Test success'
             }
         }
     }
