@@ -1,9 +1,5 @@
 pipeline{
-    agent{
-        node{
-            label 'maven'
-        }    
-    }
+    agent any
     stages{
         stage('Clone Code form Git'){
             steps{
