@@ -78,7 +78,7 @@ pipeline{
             steps {
                 script {
                 echo '<--------------- Docker Publish Started --------------->'  
-                    docker.withRegistry(registry, 'artifactory_token'){
+                    docker.withRegistry(registry, '0808095f-27f3-47f2-b89f-1ba29f48f28d'){
                         app.push()
                     }    
                 echo '<--------------- Docker Publish Ended --------------->'  
