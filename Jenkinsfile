@@ -88,7 +88,8 @@ pipeline{
         stage (" Deploy on K8S "){
             steps {
                 script {
-                echo '<--------------- Start Deploy --------------->'  
+                echo '<--------------- Start Deploy --------------->' 
+                    sh 'chmod +x deploy.sh' 
                     sh'./deploy.sh'   
                 echo '<--------------- End Deploy --------------->'  
                 }
