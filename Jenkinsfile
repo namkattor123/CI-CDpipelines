@@ -16,14 +16,14 @@ pipeline{
                 git branch: 'main', url: 'https://github.com/namkattor123/CI-CDpipelines.git'
             }
         }
-        stage("build"){
+        stage("Build"){
             steps {
                  echo "----------- build started ----------"
                 sh 'mvn clean deploy -Dmaven.test.skip=true'
                  echo "----------- build complted ----------"
             }
         }
-        stage("test"){
+        stage("Test"){
             steps{
                 echo "----------- unit test started ----------"
                  echo "----------- unit test Complted ----------"
@@ -82,6 +82,15 @@ pipeline{
                         app.push()
                     }    
                 echo '<--------------- Docker Publish Ended --------------->'  
+                }
+            }
+        }
+        stage (" Deploy on K8S "){
+            steps {
+                script {
+                echo '<--------------- Start Deploy --------------->'  
+                    sh'./deploy.sh'   
+                echo '<--------------- End Deploy --------------->'  
                 }
             }
         }
