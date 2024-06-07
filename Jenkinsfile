@@ -24,22 +24,22 @@ pipeline{
         //          echo "----------- build complted ----------"
         //     }
         // }
-        // stage("Test"){
-        //     steps{
-        //         echo "----------- unit test started ----------"
-        //          echo "----------- unit test Complted ----------"
-        //     }
-        // }
-        // stage('SonarQube analysis') {
-        //     environment{
-        //         scannerHome = tool 'namln-sonar-scanner';
-        //     }
-        //     steps{
-        //         withSonarQubeEnv('namln-sonarquebe-server') { 
-        //         sh "${scannerHome}/bin/sonar-scanner"
-        //     }
-        //     }
-        // }
+        stage("Test"){
+            steps{
+                echo "----------- unit test started ----------"
+                 echo "----------- unit test Complted ----------"
+            }
+        }
+        stage('SonarQube analysis') {
+            environment{
+                scannerHome = tool 'sonar-scanner';
+            }
+            steps{
+                withSonarQubeEnv('sonarquebe-server') { 
+                sh "${scannerHome}/bin/sonar-scanner"
+            }
+            }
+        }
         // stage("Jar Publish") {
         //     steps {
         //         script {
