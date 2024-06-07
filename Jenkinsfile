@@ -7,9 +7,9 @@ pipeline{
             label 'maven'
         }
     }
-    environment {
-    PATH = "/usr/share/apache-maven/bin:$PATH"
-    }
+    // environment {
+    // PATH = "/usr/share/apache-maven/bin:$PATH"
+    // }
     stages{
         stage('Clone Code from Git'){
             steps{
