@@ -2,14 +2,14 @@ def registry = 'https://namln.jfrog.io/'
 def imageName = 'namln.jfrog.io/valaxy-docker-local/ttrend'
 def version   = '2.1.3'
 pipeline{
-    agent {
-        node {
-            label 'maven'
-        }
-    }
-    environment {
-    PATH = "/usr/share/apache-maven/bin:$PATH"
-    }
+    // agent {
+    //     node {
+    //         label 'maven'
+    //     }
+    // }
+    // environment {
+    // PATH = "/usr/share/apache-maven/bin:$PATH"
+    // }
     stages{
         stage('Clone Code from Git'){
             steps{
