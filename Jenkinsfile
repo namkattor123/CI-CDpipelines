@@ -2,6 +2,7 @@ def registry = 'https://namln.jfrog.io/'
 def imageName = 'namln.jfrog.io/valaxy-docker-local/ttrend'
 def version   = '2.1.3'
 pipeline{
+    agent any
     // agent {
     //     node {
     //         label 'maven'
